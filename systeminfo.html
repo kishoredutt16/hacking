@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kishore Dutt (3969/15) Hacking</title>
+<meta name="theme-color" content="#2a2929" />
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="assests/css/main.css">
+<link rel="stylesheet" href="assests/css/navbar.css">
+<link rel="stylesheet" href="assests/css/sidebar.css">
+</head>
+<body>
+<header>
+	<div class="header">
+		<div class="logo">
+			<div class="logoinner">
+				<img src="assests/logo/logo.png" alt="logo"/>
+			</div>
+		</div>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="contact.html" >Contact</a></li>
+					<li><a href="feedback.html">Feedback</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="sidebar">
+		<a href="oneliners.html">One Liners</a><br>
+		<a href="systeminfo.html">System Information</a><br>
+		<hr><br>
+		<a href="git.html">GIT</a><br>
+		<hr><br>
+		<a href="hackingtools.html">Hacking Tools</a><br>
+		<hr><br>
+		<a href="http://cyberterminators.co/category/android/">Android Mobile Hacked Games</a>
+	</div>
+	<div class="content">
+		<h1>System Information</h1>
+		<br><br>
+		
+		<div class="tabs">
+			<div class="tab">
+				<h3>CPU Usage in Percentage</h3>
+			</div>
+			<div class="tab-content">
+				<div class="tab-command">
+					HZ=`awk '/\\#define HZ/ {print $3}' /usr/include/asm-generic/param.h`; NUMCPUS=`grep ^proc /proc/cpuinfo | wc -l`; FIRST=`cat /proc/stat | awk '/^cpu / {print $5}'`; sleep 1; SECOND=`cat /proc/stat | awk '/^cpu / {print $5}'`; USED=`echo 4 k 100 $SECOND $FIRST - $NUMCPUS $HZ \\* / 100 \\* - p | dc`; echo ${USED}
+				</div>
+			<br>
+			<br>
+				<div class="tab-command">
+					NUMCPUS=`grep ^proc /proc/cpuinfo | wc -l`; FIRST=`cat /proc/stat | awk '/^cpu / {print $5}'`; sleep 1; SECOND=`cat /proc/stat | awk '/^cpu / {print $5}'`; USED=`echo 2 k 100 $SECOND $FIRST - $NUMCPUS / - p | dc`; echo ${USED}%
+				</div>
+			</div>
+		</div>
+		<div class="tabs">
+			<div class="tab">
+				<h3>Laptop Battery In Percentage</h3>
+			</div>
+			<div class="tab-content">
+				<div class="tab-command">
+					max=$(grep 'last full capacity:' /proc/acpi/battery/BAT1/info|awk '{print $4}') ; current=$(grep 'remaining capacity:' /proc/acpi/battery/BAT1/state|awk '{print $3}'); percent=$(expr $current'00' / $max ); echo -e $percent
+				</div>
+				<br>
+				<div class="tab-command">
+					upower -i $(upower -e | grep BAT) | grep --color=never -E percentage|xargs|cut -d' ' -f2|sed s/%//
+				</div>
+				<br>
+				<div class="tab-command">
+					cat /sys/class/power_supply/BAT1/uevent | awk '/POWER_SUPPLY_CAPACITY/ {print $1}' | sed 's/POWER_SUPPLY_CAPACITY=//'
+				</div>
+			</div>
+		</div>
+		<div class="tabs">
+			<div class="tab">
+				<h3>External IP</h3>
+			</div>
+			<div class="tab-content">
+				<h3>curl ifconfig.me</h3>
+				<br>
+				<h3>dig +short myip.opendns.com @resolver1.opendns.com</h3>
+				<br>
+				<h3>netcat icanhazip.com 80 <<< $'GET / HTTP/1.1<br>
+				Host: icanhazip.com</h3>
+			</div>
+		</div>
+		<div class="tabs">
+			<div class="tab">
+				<h3>Others</h3>
+			</div>
+			<div class="tab-content">
+				<h3>Bluetooth MAC Address</h3>
+				<div class="tab-command">
+					hciconfig -a | awk '/BD Address:/ {print $3}'
+				</div>
+				<br>
+				<h3>Bluetooth Name</h3>
+				<div class="tab-command">
+					hciconfig -a | awk '/Name:/ {print $2}'
+				</div>
+				<br>
+				<h3>Network Interfaces</h3>
+				<div class="tab-command">
+					ifconfig -a
+				</div>
+				<br>
+				<h3>Disk Usage Info</h3>
+				<div class="tab-command">
+					df -k
+				</div>
+				<br><br>
+			</div>
+		</div>
+		<br>
+		<h1>Click Here For More Information <a style="color:#fff;" href="https://play.google.com/store/apps/details?id=com.inspiredandroid.linuxcommandbibliotheca">Download App</a></h1>
+		
+		<br>
+		<br>
+		<br>
+	</div>
+<div class="clear"></div>
+<footer>
+	<div class="footer">
+		<center>
+			<p>&copy; Copyright(2018) Kishore Dutt</p>
+		</p>
+		</center>
+	</div>
+</footer>
+</body>
+</html>

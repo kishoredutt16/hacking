@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kishore Dutt (3969/15) Hacking</title>
+<meta name="theme-color" content="#2a2929" />
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="assests/css/main.css">
+<link rel="stylesheet" href="assests/css/navbar.css">
+<link rel="stylesheet" href="assests/css/sidebar.css">
+</head>
+<body>
+<header>
+	<div class="header">
+		<div class="logo">
+			<div class="logoinner">
+				<img src="assests/logo/logo.png" alt="logo"/>
+			</div>
+		</div>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="contact.html" >Contact</a></li>
+					<li><a href="feedback.html">Feedback</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="sidebar">
+		<a href="oneliners.html">One Liners</a><br>
+		<a href="systeminfo.html">System Information</a><br>
+		<hr><br>
+		<a href="git.html">GIT</a><br>
+		<hr><br>
+		<a href="hackingtools.html">Hacking Tools</a><br>
+		<hr><br>
+		<a href="http://cyberterminators.co/category/android/">Android Mobile Hacked Games</a>
+	</div>
+	<div class="content">
+		<h1>One Liners Commands</h1>
+		<br><br>
+		
+		<h2>Run The Last Command As Root</h2>
+		<div class="tab-command">
+			<h3>sudo !!</h3>
+		</div>
+		<br>
+		<h2>Serve current directory tree at http://$HOSTNAME:8000/</h2>
+		<div class="tab-command">
+			<h3>python -m SimpleHTTPServer</h3>
+		</div>
+		<br>
+		<h2>Get Your Exrernal IP Address</h2>
+		<div class="tab-command">
+			<h3>curl ifconfig.me</h3>
+		</div>
+		<br>
+		<h2>Download an Entire Website</h2>
+		<div class="tab-command">
+			<h3>wget --random-wait -r -p -e robots=off -U mozilla http://www.example.com</h3>
+		</div>
+		<br>
+		<h2>Update Twitter Via Curl</h2>
+		<div class="tab-command">
+			<h3>curl -u user:pass -d status="Tweeting from the shell" http://twitter.com/statuses/update.xml</h3>
+		</div>
+		<br>
+		<h2>Watch Starwars ViaT Telnet</h2>
+		<div class="tab-command">
+			<h3>telnet towel.blinkenlights.nl</h3>
+		</div>
+		<br>
+		<h2>Recover Delete File</h2>
+		<div class="tab-command">
+			<h3>grep -a -B 25 -A 100 'some string in the file' /dev/sda1 > results.txt</h3>
+		</div>
+		<br>
+		<h2>Extract Audio From Flash Video as mp3 file</h2>
+		<div class="tab-command">
+			<h3>ffmpeg -i video.flv -vn -ar 44100 -ac 2 -ab 192k -f mp3 audio.mp3</h3>
+		</div>
+		<br>
+		<h2>Convert Text to Picture</h2>
+		<div class="tab-command">
+			<h3>echo -e "Some Text Line1\nSome Text Line 2" | convert -background none -density 196  -resample 72 -unsharp 0x.5 -font "Courier" text:- -trim +repage -bordercolor white -border 3  text.gif</h3>
+		</div>
+		<br>
+		<h2>Check Site SSL Certificates</h2>
+		<div class="tab-command">
+			echo | openssl s_client -connect www.google.com:443 2>/dev/null |openssl x509 -dates -noout
+		</div>
+		<br>
+		<h2>Convert PDF to JPG</h2>
+		<div class="tab-command">
+			for file in `ls *.pdf`; do convert -verbose -colorspace RGB -resize 800 -interlace none -density 300 -quality 80 $file `echo $file | sed 's/\.pdf$/\.jpg/'`; done
+		</div>
+		<br>
+		<h2>Download Entire Static Website to Local Machine</h2>
+		<div class="tab-command">
+			wget --recursive  --page-requisites --convert-links www.example.com
+		</div>
+		<br>
+		<h2>Download All MP3 listed in HTML Page</h2>
+		<div class="tab-command">
+			wget -r -l1 -H -t1 -nd -N -np -A.mp3 -erobots=off [url of website]
+		</div>
+		<br>
+		<br>
+		<h1>Click Here For More Information <a style="color:#fff;" href="https://play.google.com/store/apps/details?id=com.inspiredandroid.linuxcommandbibliotheca">Download App</a></h1>
+		<br>
+		<br>
+		<br>
+	</div>
+<div class="clear"></div>
+<footer>
+	<div class="footer">
+		<center>
+			<p>&copy; Copyright(2018) Kishore Dutt</p>
+		</p>
+		</center>
+	</div>
+</footer>
+</body>
+</html>
